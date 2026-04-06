@@ -33,7 +33,6 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 text-base sm:text-lg text-zinc-500 max-w-xl leading-relaxed animate-fade-in animate-fade-in-delay-2">
               Predict short-term stock price trends using Linear Regression on historical data.
-              Built for educational purposes with real technical indicators.
             </p>
             <div className="mt-8 flex gap-3 animate-fade-in animate-fade-in-delay-3">
               {user ? (
@@ -47,11 +46,6 @@ export default function HomePage() {
                   <Link to="/register">
                     <Button size="lg" data-testid="hero-get-started-btn" className="bg-zinc-900 text-white hover:bg-zinc-800 rounded-sm px-8">
                       Get Started
-                    </Button>
-                  </Link>
-                  <Link to="/about">
-                    <Button variant="outline" size="lg" data-testid="hero-learn-more-btn" className="rounded-sm border-zinc-300 text-zinc-700 hover:bg-zinc-50">
-                      Learn More
                     </Button>
                   </Link>
                 </>

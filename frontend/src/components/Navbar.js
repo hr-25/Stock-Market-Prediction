@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { TrendingUp, LogOut, Star, BarChart3, Info, Home, Menu, X } from "lucide-react";
+import { TrendingUp, LogOut, Star, BarChart3, Home, Menu, X } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { useState } from "react";
 
@@ -19,11 +19,8 @@ export default function Navbar() {
     ? [
         { to: "/stocks", label: "Stocks", icon: BarChart3 },
         { to: "/watchlist", label: "Watchlist", icon: Star },
-        { to: "/about", label: "About", icon: Info },
       ]
-    : [
-        { to: "/about", label: "About", icon: Info },
-      ];
+    : [];
 
   const isActive = (path) => location.pathname === path;
 

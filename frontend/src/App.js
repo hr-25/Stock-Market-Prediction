@@ -8,7 +8,6 @@ import RegisterPage from "./pages/RegisterPage";
 import StockSelectionPage from "./pages/StockSelectionPage";
 import PredictionDashboard from "./pages/PredictionDashboard";
 import WatchlistPage from "./pages/WatchlistPage";
-import AboutPage from "./pages/AboutPage";
 import { Loader2 } from "lucide-react";
 
 function ProtectedRoute({ children }) {
@@ -48,7 +47,6 @@ function AppRoutes() {
         <Route path="/stocks" element={<ProtectedRoute><StockSelectionPage /></ProtectedRoute>} />
         <Route path="/predict/:ticker" element={<ProtectedRoute><PredictionDashboard /></ProtectedRoute>} />
         <Route path="/watchlist" element={<ProtectedRoute><WatchlistPage /></ProtectedRoute>} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
