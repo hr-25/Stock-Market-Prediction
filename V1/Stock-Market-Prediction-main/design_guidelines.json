@@ -1,0 +1,118 @@
+{
+  "theme_and_archetype": {
+    "domain": "Finance / Analytics Dashboard",
+    "theme": "LIGHT",
+    "archetype": "Archetype 4: Swiss & High-Contrast",
+    "reasoning": "Emphasizes data clarity, authority, and truth—perfect for a stock prediction system that relies heavily on accurate numbers and trends."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "'Cabinet Grotesk', sans-serif",
+      "weights": ["400", "700", "900"],
+      "styling": "tracking-tight, leading-none, stark contrast between weights"
+    },
+    "body": {
+      "font_family": "'IBM Plex Sans', sans-serif",
+      "weights": ["400", "500", "600"],
+      "styling": "leading-relaxed, highly legible for numbers"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-black",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl tracking-tight font-bold",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base sm:text-sm text-zinc-600",
+      "labels": "text-xs font-bold uppercase tracking-[0.2em] text-zinc-500"
+    }
+  },
+  "colors": {
+    "base": {
+      "background": "#FFFFFF",
+      "surface": "#F9FAFB",
+      "border": "#E5E7EB"
+    },
+    "text": {
+      "primary": "#09090B",
+      "secondary": "#52525B",
+      "muted": "#A1A1AA"
+    },
+    "functional": {
+      "primary": "#18181B",
+      "primary_hover": "#27272A",
+      "trend_up": "#10B981",
+      "trend_up_bg": "#D1FAE5",
+      "trend_down": "#EF4444",
+      "trend_down_bg": "#FEE2E2",
+      "focus_ring": "#000000"
+    },
+    "rules": [
+      "No full-screen gradients. Color exists only to guide action.",
+      "95% of the UI should be monochrome (Whites, Greys, Blacks).",
+      "Use 'trend_up' and 'trend_down' ONLY for stock indicators and prediction highlights.",
+      "Never use pure black #000000 for text, use tinted grey #09090B."
+    ]
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "Tailwind standard, but with generous padding in structural containers (p-6, p-8).",
+    "dashboard_grid": {
+      "type": "The Control Room Grid",
+      "gaps": "gap-4 md:gap-6",
+      "base_cols": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4",
+      "span_logic": "Charts span 2 or 3 cols, Summary metrics span 1 col."
+    },
+    "surfaces": {
+      "dashboard_cards": "Flat background (bg-white), 1px solid border (border-zinc-200), NO shadow by default. On hover: shadow-sm and border-zinc-300.",
+      "headers": "Solid white background (bg-white) with a hard bottom 1px border (border-zinc-200) - NO glassmorphism for finance data clarity.",
+      "data_tables": "Grid Borders style: border-collapse, visible lines for readability."
+    },
+    "alignment": "Optical alignment. Numbers in tables must be right-aligned. Labels left-aligned. Headings left-aligned."
+  },
+  "components_strategy": {
+    "structure": "Raw HTML + Tailwind for structural layouts, avoiding generic Shadcn cards for the main frame to maintain a minimalist Swiss feel. Dashboard widgets use tightly padded divs with border-zinc-200.",
+    "interactive": "Shadcn UI (heavily customized to be flat, no-radius or very small rounded-sm). Use .js/.jsx extensions.",
+    "forms": "Shadcn Inputs, Selects. Square or sm-rounded corners. border-zinc-300, focus:ring-black.",
+    "charts": "Recharts (Lines and Area). Must be color-blind friendly. Predictions should use a dashed line stroke (strokeDasharray='5 5') to distinguish from historical solid lines.",
+    "icons": "lucide-react (default for clarity) or @phosphor-icons/react (for denser dashboards). Note: require yarn add if phosphor is chosen."
+  },
+  "motion_and_interactions": {
+    "hover_states": "Crisp color changes (e.g., text-zinc-500 to text-black). bg-zinc-50 to bg-zinc-100.",
+    "transitions": "transition-all duration-200 ease-in-out",
+    "charts_animation": "Subtle path drawing animation (1.5s ease-out) on load.",
+    "rules": "Minimalist motion. No distracting bouncing or heavy parallax. Feedback must be instant."
+  },
+  "testing_attributes": {
+    "rule": "All interactive and key informational elements MUST include a data-testid attribute.",
+    "examples": [
+      "data-testid='stock-search-input'",
+      "data-testid='trend-indicator-up'",
+      "data-testid='predict-button'",
+      "data-testid='historical-chart'",
+      "data-testid='prediction-chart'"
+    ]
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/30506523/pexels-photo-30506523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Abstract view of modern architecture featuring reflective glass and geometric lines. Use as a subtle, low-opacity (e.g. bg-white/90 overlay) background layer for the Home/Landing page.",
+      "category": "hero"
+    },
+    "feature_context": {
+      "url": "https://images.unsplash.com/photo-1748439281934-2803c6a3ee36?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwZGFzaGJvYXJkJTIwZGF0YXxlbnwwfHx8fDE3NzU0NTU3OTJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Stock market charts displayed on digital devices. Use for About page or Project Intro sections to ground the UI in reality.",
+      "category": "content"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the Archetype 4 (Swiss & High-Contrast) rules. The UI should be predominantly monochrome (white, tinted greys, black).",
+    "Use color EXCLUSIVELY to signal functionality or data states (e.g., Green for Up, Red for Down). Do not use colorful gradients or backgrounds.",
+    "Use 'Cabinet Grotesk' for all headings and 'IBM Plex Sans' for body and numbers. (Import via Google Fonts or Fontshare in the root HTML/CSS).",
+    "Do not use generic Shadcn Card shadows. Apply the 'Grid Borders' and flat surface styling: 1px borders, white background, no shadow.",
+    "Ensure the Prediction charts use Recharts, with historical data as solid lines and predicted data as dashed lines (strokeDasharray).",
+    "Implement the 'Control Room' grid for the dashboard (grid-cols-1 md:grid-cols-3 or 4) with dense spacing (gap-4).",
+    "Ensure every interactive element has a clear hover/focus state with high contrast (e.g. focus:ring-black).",
+    "Do NOT use placeholder images. Only use the provided media URLs.",
+    "Apply `data-testid` to all interactive and data-display components.",
+    "Work with .js and .jsx files exclusively as requested. Do not implement .tsx files.",
+    "Customize Shadcn UI to fit the minimal Swiss Brutalist aesthetic. Override default border radius to `rounded-sm` or `rounded-none`."
+  ]
+}
